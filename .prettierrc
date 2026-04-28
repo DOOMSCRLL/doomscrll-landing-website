@@ -1,0 +1,29 @@
+{
+  "plugins": [
+    "prettier-plugin-astro",
+    "prettier-plugin-tailwindcss"
+  ],
+  "tailwindConfig": "./src/styles/doomscrll-design-system.css",
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "bracketSameLine": true,
+        "printWidth": 120,
+        "semi": false,
+        "singleAttributePerLine": false,
+        "singleQuote": false,
+        "trailingComma": "all"
+      }
+    },
+    {
+      "files": "*.ts",
+      "options": {
+        "printWidth": 120,
+        "semi": false,
+        "singleQuote": false,
+        "trailingComma": "all"
+      }
+    }
+  ]
+}
