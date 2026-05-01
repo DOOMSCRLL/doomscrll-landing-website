@@ -3,7 +3,7 @@
     "prettier-plugin-astro",
     "prettier-plugin-tailwindcss"
   ],
-  "tailwindConfig": "./src/styles/doomscrll-design-system.css",
+  "tailwindStylesheet": "./src/styles/doomscrll-design-system.css",
   "overrides": [
     {
       "files": "*.astro",
