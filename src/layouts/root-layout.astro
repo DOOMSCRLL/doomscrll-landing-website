@@ -1,19 +1,29 @@
 ---
 import "styles/doomscrll-design-system.css"
+
+const { locale, description, title } = Astro.props
 ---
 
-<!-- TODO: Implement root layout -->
-
-<!doctype html>
-
-<html lang="en">
+<!-- TODO: Implement root layout --><!doctype html>
+<html lang={locale}>
+  <!--
+    DOOMSCRLL project, it's brand and related assets, including
+    the website and apps are, made by, and belong to Yakup Murat Çaylak.
+  -->
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Document</title>
-  </head>
-  <body>
+    <meta name="description" content={description} />
 
-  </body>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png?v=20260502" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260502" />
+    <link rel="shortcut icon" href="/favicon.ico?v=20260502" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260502" />
+    <meta name="apple-mobile-web-app-title" content="DOOMSCRLL" />
+    <link rel="manifest" href="/site.webmanifest?v=20260502" />
+
+    <title>{title}</title>
+  </head>
+  <body> </body>
 </html>
