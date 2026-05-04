@@ -9,7 +9,7 @@ export const kDefaultLocale: Locale = "en"
 export const kLocales: Locale[] = Object.keys(kDictionaries) as Locale[]
 
 function _isLocale(val: unknown): val is Locale {
-  return typeof val === "string" && val in kLocales
+  return typeof val === "string" && val in kDictionaries
 }
 // #endregion
 

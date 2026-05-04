@@ -6,22 +6,21 @@
     "erasableSyntaxOnly": true,
     "noEmit": true,
     "strictNullChecks": true,
-    "baseUrl": ".",
     "paths": {
       "comps/*": [
-        "src/components/*"
+        "./src/components/*"
       ],
       "layouts/*": [
-        "src/layouts/*"
+        "./src/layouts/*"
       ],
       "repos/*": [
-        "src/repos/*"
+        "./src/repos/*"
       ],
       "styles/*": [
-        "src/styles/*"
+        "./src/styles/*"
       ],
       "utils/*": [
-        "src/utils/*"
+        "./src/utils/*"
       ]
     }
   },

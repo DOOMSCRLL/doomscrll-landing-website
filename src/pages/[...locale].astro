@@ -1,0 +1,16 @@
+---
+import type { GetStaticPaths } from "astro"
+import RootLayout from "layouts/root-layout.astro"
+import { getDictionaryOf, kDefaultLocale, kLocales } from "repos/locales"
+
+export const getStaticPaths = (() =>
+  kLocales.map(locale => ({
+    params: { locale: locale === kDefaultLocale ? undefined : locale },
+    props: { currentLocale: locale },
+  }))) satisfies GetStaticPaths
+
+const { currentLocale } = Astro.props
+const dict = getDictionaryOf(currentLocale)
+---
+
+<RootLayout locale="en" description="" title="" />
