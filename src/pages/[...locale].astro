@@ -10,6 +10,7 @@ export const getStaticPaths = (() =>
   }))) satisfies GetStaticPaths
 
 const { currentLocale } = Astro.props
+// @ts-ignore: ts(6133)
 const dict = getDictionaryOf(currentLocale)
 ---
 
