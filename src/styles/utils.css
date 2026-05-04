@@ -1,0 +1,14 @@
+@utility complementary {
+  pointer-events: none;
+
+  display: inline-flex;
+  align-items: center;
+
+  width: auto;
+  height: auto;
+}
+
+@utility pretty-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-brand) transparent;
+}

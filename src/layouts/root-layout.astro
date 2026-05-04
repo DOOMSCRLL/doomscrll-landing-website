@@ -5,7 +5,7 @@ const { locale, description, title } = Astro.props
 ---
 
 <!-- TODO: Implement root layout --><!doctype html>
-<html lang={locale}>
+<html lang={locale} data-theme="doomscrll">
   <!--
     DOOMSCRLL project, it's brand and related assets, including
     the website and apps are, made by, and belong to Yakup Murat Çaylak.
@@ -24,6 +24,38 @@ const { locale, description, title } = Astro.props
     <link rel="manifest" href="/site.webmanifest?v=20260502" />
 
     <title>{title}</title>
+
+    <script>
+      ;(function () {
+        const COLOR_THEMES = [
+          "doomscrll", // also the default theme.
+          "1bit-styx",
+          "bluuberry-donut-gb",
+          "mist-gb",
+          "crimson",
+          "cherrymelon",
+          "neon-night-sky",
+          "sangria",
+          "cold-light",
+          "cave-moss",
+          "ys-coffee-calm",
+          "gold-gb",
+          "papercut4",
+          "bone-apple-tea",
+          "bluem0ld",
+        ]
+
+        // Themes are applied on a weekly rotation basis=
+        // time since epoch + 3 day offset / 1 week
+        const weeklyCycle = Math.floor((Date.now() + 259200000) / 604800000)
+        const theme = COLOR_THEMES[weeklyCycle % COLOR_THEMES.length]!
+
+        document.documentElement.setAttribute("data-theme", theme)
+      })()
+    </script>
   </head>
-  <body> </body>
+
+  <body>
+    <slot />
+  </body>
 </html>
