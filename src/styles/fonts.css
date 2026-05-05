@@ -80,6 +80,6 @@
 /* #endregion */
 
 @theme {
-  --font-serif: "Twemoji Country Flags", "Playfair", ui-serif, serif;
-  --font-mono: "Twemoji Country Flags", "Space Mono", ui-monospace, monospace;
+  --font-serif: "Playfair", ui-serif, serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
 }

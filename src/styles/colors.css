@@ -27,8 +27,8 @@
   /* DOOMSCRLL | @_notymc */
   [data-theme="doomscrll"] {
     --theme-primary: var(--c-darkness);
-    --theme-secondary: var(--c-bloodmoon);
-    --theme-accent: var(--c-lagoon);
+    --theme-secondary: var(--c-lagoon);
+    --theme-accent: var(--c-bloodmoon);
   }
 
   /* 1BIT-STYX | @caleb-spaghetti */

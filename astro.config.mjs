@@ -15,6 +15,6 @@ export default defineConfig({
   site: "https://doomscrll.com",
   redirects: {
     "/en": "/",
-    "/en/[...path]": "/[...path]",
+    "/en/[...locale]": "/[...locale]",
   },
 });

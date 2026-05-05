@@ -1,6 +1,10 @@
 ---
 import type { GetStaticPaths } from "astro"
+
+import DoomscrllLogo from "comps/doomscrll-logo.astro"
+import StarMark from "comps/star-mark.astro"
 import RootLayout from "layouts/root-layout.astro"
+
 import { getDictionaryOf, kDefaultLocale, kLocales } from "repos/locales"
 
 export const getStaticPaths = (() =>
@@ -10,8 +14,27 @@ export const getStaticPaths = (() =>
   }))) satisfies GetStaticPaths
 
 const { currentLocale } = Astro.props
-// @ts-ignore: ts(6133)
+
 const dict = getDictionaryOf(currentLocale)
 ---
 
-<RootLayout locale="en" description="" title="" />
+<RootLayout locale={currentLocale} description={dict.meta.description} title={dict.meta.title}>
+  <DoomscrllLogo size="Small" />
+  <p class="font-serif text-3xl font-medium tracking-tighter">{dict.copy}</p>
+  <section class="flex flex-col">
+    <!-- TODO: Add carousel -->
+    <!-- TODO: Add carousel index -->
+    <section><!-- TODO: Add carousel title --></section>
+  </section>
+  <section class="flex">
+    <section class="flex">
+      <p class="font-serif text-3xl font-medium tracking-tighter">{dict.appFunnel.copy}</p>
+      <!-- TODO: Add buttons -->
+    </section>
+    <StarMark />
+    <section class="flex">
+      <p class="font-serif text-3xl font-medium tracking-tighter">{dict.doomlitFunnel.copy}</p>
+      <!-- TODO: Add buttons -->
+    </section>
+  </section>
+</RootLayout>

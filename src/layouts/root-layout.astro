@@ -24,7 +24,7 @@ const { locale, description, title } = Astro.props
     <link rel="manifest" href="/site.webmanifest?v=20260502" />
 
     <title>{title}</title>
-
+    <!-- FIXME: Enable this script before deploying.
     <script>
       ;(function () {
         const COLOR_THEMES = [
@@ -53,6 +53,7 @@ const { locale, description, title } = Astro.props
         document.documentElement.setAttribute("data-theme", theme)
       })()
     </script>
+    -->
   </head>
 
   <body class="flex flex-col justify-center">
