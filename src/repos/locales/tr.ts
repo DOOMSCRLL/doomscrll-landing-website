@@ -19,4 +19,11 @@ export default {
     cta: "Bir DOOMLIT ayırt",
     subtext: "Yalnızca 1$!",
   },
+  appPopup: {
+    header: "Uygulamayı edinin!",
+    copy: "DOOMSCRLL uygulamasını indirerek bağımsız projeleri keşfedin. Katalog hergün değişir ve uygulamayı kullanmak için bir hesaba ya da para ödemenize gerek yok.",
+    altTextAppStore: "Apple App Store'dan indirin.",
+    altTextPlayStore: "Google Play Store'dan indirin.",
+    labelClose: "Geri dön",
+  },
 } satisfies Dictionary

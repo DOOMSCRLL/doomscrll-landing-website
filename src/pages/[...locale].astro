@@ -1,7 +1,11 @@
 ---
 import type { GetStaticPaths } from "astro"
 
+import PlatformPopup from "comps/app-popup.astro"
 import DoomscrllLogo from "comps/doomscrll-logo.astro"
+import FunnelingText from "comps/funneling-text.astro"
+import SlabAnchor from "comps/slab-anchor.astro"
+import SlabButton from "comps/slab-button.astro"
 import StarMark from "comps/star-mark.astro"
 import RootLayout from "layouts/root-layout.astro"
 
@@ -20,21 +24,25 @@ const dict = getDictionaryOf(currentLocale)
 
 <RootLayout locale={currentLocale} description={dict.meta.description} title={dict.meta.title}>
   <DoomscrllLogo size="Small" />
-  <p class="font-serif text-3xl font-medium tracking-tighter">{dict.copy}</p>
+  <FunnelingText text={dict.copy} />
+
   <section class="flex flex-col">
     <!-- TODO: Add carousel -->
     <!-- TODO: Add carousel index -->
     <section><!-- TODO: Add carousel title --></section>
   </section>
+
   <section class="flex">
     <section class="flex">
-      <p class="font-serif text-3xl font-medium tracking-tighter">{dict.appFunnel.copy}</p>
-      <!-- TODO: Add buttons -->
+      <p class="font-serif text-2xl font-medium tracking-tighter">{dict.appFunnel.copy}</p>
+      <SlabButton label={dict.appFunnel.cta} opensModalId="app-download-popup" />
     </section>
     <StarMark />
     <section class="flex">
-      <p class="font-serif text-3xl font-medium tracking-tighter">{dict.doomlitFunnel.copy}</p>
-      <!-- TODO: Add buttons -->
+      <p class="font-serif text-2xl font-medium tracking-tighter">{dict.doomlitFunnel.copy}</p>
+      <SlabAnchor href="#" label={dict.doomlitFunnel.cta} />
     </section>
   </section>
+
+  <PlatformPopup locale={currentLocale} dialogId="app-download-popup" />
 </RootLayout>

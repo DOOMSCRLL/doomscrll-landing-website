@@ -1,0 +1,24 @@
+---
+/* No need for other variants for the landing page. */
+
+type Props = {
+  href: string
+  label: string
+}
+
+const { href, label } = Astro.props
+---
+
+<a
+  href={href}
+  class:list={[
+    "font-mono text-lg font-bold tracking-wider text-secondary uppercase",
+    "flex items-center justify-center gap-4",
+    "relative z-0 h-12 w-full rounded-2xl bg-primary px-4",
+    "before:pointer-events-none before:absolute before:inset-0 before:z-10 before:rounded-[inherit] before:border-3 before:border-secondary",
+    "not-disabled:hover:bg-secondary not-disabled:active:bg-accent not-disabled:active:before:border-accent",
+    "not-disabled:hover:text-primary not-disabled:active:text-primary",
+  ]}>
+  {label}
+  <span class="text-3xl">→</span>
+</a>

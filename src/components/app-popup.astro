@@ -1,0 +1,61 @@
+---
+import { getDictionaryOf, type Locale } from "repos/locales"
+import SlabButton from "./slab-button.astro"
+
+interface Props {
+  locale: Locale
+  dialogId: string
+}
+
+const { locale, dialogId } = Astro.props
+
+const dict = getDictionaryOf(locale).appPopup
+---
+
+<dialog
+  id={dialogId}
+  class:list={[
+    "m-auto box-border h-fit max-h-[85dvh] min-h-0 w-min",
+    "rounded-2xl border-3 border-secondary bg-primary p-6",
+    "flex-col items-center justify-start gap-6 open:flex",
+    "backdrop:bg-[black]/60 backdrop:backdrop-blur-xs",
+  ]}>
+  <h1 class="font-serif text-4xl tracking-tight text-secondary italic">{dict.header}</h1>
+  <p class="font-serif text-xl text-secondary">{dict.copy}</p>
+
+  <a href="#" target="_blank" rel="nofollow noreferrer noopener" class="w-75">
+    <img
+      src=`/img-assets/google-play-badge-${locale}.svg`
+      width="300"
+      height="89"
+      alt={dict.altTextPlayStore}
+      loading="lazy"
+      decoding="async"
+    />
+  </a>
+  <a href="#" target="_blank" rel="nofollow noreferrer noopener" class="w-75">
+    <img
+      src=`/img-assets/app-store-badge-${locale}.svg`
+      width="300"
+      height="100"
+      alt={dict.altTextAppStore}
+      loading="lazy"
+      decoding="async"
+    />
+  </a>
+
+  <SlabButton label={dict.labelClose} closesModalId={dialogId} />
+</dialog>
+
+<script>
+  const dialogs = document.querySelectorAll("dialog")
+
+  dialogs.forEach(dialog => {
+    const id = dialog.id
+    const openBtn = document.querySelector(`[data-modal-open="${id}"]`)
+    const closeBtn = document.querySelector(`[data-modal-close="${id}"]`)
+
+    openBtn?.addEventListener("click", () => dialog.showModal())
+    closeBtn?.addEventListener("click", () => dialog.close())
+  })
+</script>

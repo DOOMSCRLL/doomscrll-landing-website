@@ -17,4 +17,11 @@ export default {
     cta: "Reserve a DOOMLIT",
     subtext: "Only for 1$!",
   },
+  appPopup: {
+    header: "Get the app!",
+    copy: "Download DOOMSCRLL app to explore independent projects. Catalogue changes everyday, and you don't need an account, or pay to use the app.",
+    altTextAppStore: "Download on the Apple App Store",
+    altTextPlayStore: "Get it on Google Play Store",
+    labelClose: "Return",
+  },
 }

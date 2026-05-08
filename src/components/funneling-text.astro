@@ -1,0 +1,61 @@
+---
+type Props = {
+  text: string
+}
+
+const { text } = Astro.props
+---
+
+<div id="funnel-text-container" class="w-fit max-w-full shrink-0 overflow-hidden px-20 text-center contain-layout">
+  <div id="funnel-left" class="h-full w-30/100 opacity-0" aria-hidden="true"></div>
+  <div id="funnel-right" class="h-full w-30/100 opacity-0" aria-hidden="true"></div>
+  <p class="m-0 p-0 text-center font-serif text-3xl font-medium tracking-tighter">{text}</p>
+</div>
+
+<style>
+  #funnel-left {
+    float: left;
+    shape-outside: polygon(0 0, 100% 100%, 0 100%);
+    shape-margin: 1rem;
+  }
+  #funnel-right {
+    float: right;
+    shape-outside: polygon(100% 0, 100% 100%, 0 100%);
+    shape-margin: 1rem;
+  }
+</style>
+
+<script>
+  const container = document.getElementById("funnel-text-container")
+
+  function calculateConstrainedTextHeight() {
+    if (!container) return
+
+    container.style.height = "auto"
+
+    let minH = container.scrollHeight
+    let maxH = minH * 3
+
+    let optH = maxH
+
+    while (minH <= maxH) {
+      let h = Math.floor((minH + maxH) / 2)
+      container.style.height = h + "px"
+
+      if (container.scrollHeight <= h) {
+        optH = h
+        maxH = h - 1
+      } else {
+        minH = h + 1
+      }
+    }
+
+    container.style.height = optH + 1 + "px"
+  }
+
+  if (container !== null) {
+    const parent = container.parentElement
+    const observer = new ResizeObserver(() => requestAnimationFrame(calculateConstrainedTextHeight))
+    if (parent !== null) observer.observe(parent)
+  }
+</script>
