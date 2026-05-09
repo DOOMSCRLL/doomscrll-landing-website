@@ -13,6 +13,9 @@
       "layouts/*": [
         "./src/layouts/*"
       ],
+      "models/*": [
+        "./src/models/*"
+      ],
       "repos/*": [
         "./src/repos/*"
       ],

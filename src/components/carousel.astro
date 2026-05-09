@@ -1,0 +1,98 @@
+---
+import type ProjectPreview from "models/project-preview"
+
+import DoomscrllLogo from "./doomscrll-logo.astro"
+import IconExpandingArrow from "./icon-expanding-arrow.astro"
+import DoomscrllWordmark from "./doomscrll-wordmark.astro"
+
+interface Props {
+  // FIXME: Make this prop required after testing.
+  items?: ProjectPreview[]
+}
+
+const { items = [] } = Astro.props
+
+const tileCount = items.length + 1
+const zRadius = Math.ceil(6 /*rem*/ / 2 / Math.tan(Math.PI / tileCount))
+const rotationOffset = 360 / tileCount
+---
+
+<section id="carousel-container" class="flex flex-col items-center justify-center gap-12" data-tile-count={tileCount}>
+  <section class="relative h-24 w-24 perspective-midrange">
+    <div
+      id="carousel"
+      class="absolute h-full w-full pt-6 transition-transform will-change-transform transform-3d motion-reduce:transition-none">
+      <div
+        class="absolute flex h-24 w-24 items-center justify-center bg-primary backface-hidden"
+        style={`transform: rotateY(0deg) translateZ(${zRadius}rem);`}>
+        <DoomscrllLogo size="Full Height" />
+      </div>
+      {
+        items.map((item, index) => (
+          <div
+            class="absolute h-24 w-24 backface-hidden"
+            style={`transform: rotateY(${(index + 1) * rotationOffset}deg) translateZ(${zRadius}rem);`}>
+            <img
+              src={item.imageUrl}
+              alt={item.name}
+              loading="lazy"
+              class="block h-full w-full object-cover object-center"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="flex justify-between">
+    <button id="btn-carousel-prev" class="h-12 w-full rounded-2xl bg-primary fill-secondary px-4">
+      <IconExpandingArrow />
+    </button>
+    <div class="flex flex-col gap-4">
+      <div id="brand-wordmark-doomscrll" class="hidden h-full"><DoomscrllWordmark /></div>
+      <p id="project-title">DOOMSCROLL</p>
+      <p id="project-author">_notymc</p>
+    </div>
+    <button id="btn-carousel-next" class="h-12 w-full rounded-2xl bg-primary fill-secondary px-4">
+      <IconExpandingArrow />
+    </button>
+  </section>
+</section>
+
+<script>
+  function configCarousel() {
+    const wrapper = document.getElementById("carousel-container")
+    const carousel = document.getElementById("carousel")
+
+    const btnPrev = document.getElementById("btn-carousel-prev")
+    const btnNext = document.getElementById("btn-carousel-next")
+
+    if (wrapper === null || carousel === null || btnPrev === null || btnNext === null) return
+
+    /*const SIZE_FONT_ROOT = parseFloat(getComputedStyle(document.documentElement).fontSize)
+    const SIZE_TILE = parseFloat(wrapper.dataset.tileSizeRem!) * SIZE_FONT_ROOT*/
+    const COUNT_TILES = parseFloat(wrapper.dataset.tileCount!)
+    const OFFSET_ROTATION = 360 / COUNT_TILES
+
+    let itr = 0
+
+    function updateCarousel() {
+      if (carousel === null) throw Error("ERROR (configCarousel > updateCarousel): `div.#carousel` is null.")
+
+      carousel.style.transform = `rotateY(${-OFFSET_ROTATION * itr}deg)`
+      // const activeIndex = ((iterator % length) + length) % length;
+    }
+
+    btnNext.addEventListener("click", () => {
+      itr++
+      updateCarousel()
+    })
+    btnPrev.addEventListener("click", () => {
+      itr--
+      updateCarousel()
+    })
+  }
+
+  configCarousel()
+  document.addEventListener("astro:page-load", configCarousel)
+</script>
