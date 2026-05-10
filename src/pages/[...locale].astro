@@ -21,6 +21,13 @@ export const getStaticPaths = (() =>
 const { currentLocale } = Astro.props
 
 const dict = getDictionaryOf(currentLocale)
+
+// TODO: Needs a mobile page as well...
+// TODO: Implement backend api to see daily projects
+// TODO: Tweak carousel spacing, sizing and perspective
+// TODO: Add language switcher
+// TODO: Change platform badges to point to app store links
+// TODO: Add under construction state to platform badges.
 ---
 
 <RootLayout locale={currentLocale} description={dict.meta.description} title={dict.meta.title}>

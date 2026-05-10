@@ -5,7 +5,7 @@ export default {
     title: "DOOMSCRLL",
     description: "DOOMSCRLL, bağımsız projelerin 24 saatliğine sergilenebildiği bir sosyal ağdır.",
   },
-  copy: "DOOMSCRLL bağımsızların projelerin kitlesini bulmaları için bir platformdur. Burada bir algoritma ya da gürültü yok. Projen 24 saatliğine kısıtlı bir günlük akışta sergilenir. Zor kısmı tamamladın, şimdi projeni kitlesine tanıt.",
+  copy: "DOOMSCRLL bağımsızların kitlesini bulmaları için bir platformdur. Burada bir algoritma ya da gürültü yok. Projen 24 saatliğine kısıtlı bir günlük akışta sergilenir. Zor kısmı tamamladın, şimdi projeni göster.",
   carousel: {
     titleDefault: "DOOMSCRLL",
     authorDefault: "_notymc",
