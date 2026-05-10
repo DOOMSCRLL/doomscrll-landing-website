@@ -19,7 +19,7 @@ const rotationOffset = 360 / tileCount
 <section
   id="carousel-container"
   class="flex h-full w-full flex-col items-center justify-center gap-20"
-  data-tile-count={tileCount}>
+  data-items={JSON.stringify(items)}>
   <!-- Carousel -->
   <section class="relative h-56 w-56 perspective-[2400px]">
     <div
@@ -48,11 +48,11 @@ const rotationOffset = 360 / tileCount
   </section>
 
   <!-- Interactions -->
-  <section class="flex h-min w-full items-center justify-center gap-8 px-4">
+  <section class="grid h-min w-full grid-cols-3 gap-16 px-4">
     <ExpandingArrowButton direction="Left" id="btn-carousel-prev" />
-    <div class="flex flex-col items-center gap-2">
+    <div class="flex h-full w-full flex-col items-center gap-2">
       <div id="brand-wordmark" class="h-full opacity-60"><DoomscrllWordmark /></div>
-      <p id="project-title" class="hidden">DOOMSCROLL</p>
+      <p id="project-title" class="hidden font-serif text-6xl">DOOMSCROLL</p>
       <p id="project-author" class="font-serif text-xl italic">&#64;_notymc</p>
     </div>
     <ExpandingArrowButton direction="Right" id="btn-carousel-next" />
@@ -64,17 +64,27 @@ const rotationOffset = 360 / tileCount
     const wrapper = document.getElementById("carousel-container")
     const carousel = document.getElementById("carousel")
 
+    const wordmark = document.getElementById("brand-wordmark")
+    const title = document.getElementById("project-title")
+    const author = document.getElementById("project-author")
+
     const btnPrev = document.getElementById("btn-carousel-prev")
     const btnNext = document.getElementById("btn-carousel-next")
 
-    if (wrapper === null || carousel === null || btnPrev === null || btnNext === null) return
+    if (!wrapper || !carousel || !wordmark || !title || !author || !btnPrev || !btnNext) return
+
+    const items = JSON.parse(wrapper.dataset.items!)
 
     /*const SIZE_FONT_ROOT = parseFloat(getComputedStyle(document.documentElement).fontSize)
     const SIZE_TILE = parseFloat(wrapper.dataset.tileSizeRem!) * SIZE_FONT_ROOT*/
-    const COUNT_TILES = parseFloat(wrapper.dataset.tileCount!)
+    const COUNT_TILES = items.length + 1
     const OFFSET_ROTATION = 360 / COUNT_TILES
 
     let itr = 0
+
+    function getActiveIndex() {
+      return ((itr % COUNT_TILES) + COUNT_TILES) % COUNT_TILES
+    }
 
     function updateCarousel() {
       if (carousel === null) throw Error("ERROR (configCarousel > updateCarousel): `div.#carousel` is null.")
@@ -83,13 +93,33 @@ const rotationOffset = 360 / tileCount
       // const activeIndex = ((iterator % length) + length) % length;
     }
 
+    function updateDetails() {
+      if (title === null || wordmark === null || author === null) return
+
+      const activeIndex = getActiveIndex()
+      if (activeIndex === 0) {
+        title.classList.add("hidden")
+        wordmark.classList.remove("hidden")
+
+        author.textContent = "@_notymc"
+      } else {
+        title.classList.remove("hidden")
+        wordmark.classList.add("hidden")
+
+        title.textContent = items[activeIndex].name
+        author.textContent = "@" + items[activeIndex].author
+      }
+    }
+
     btnNext.addEventListener("click", () => {
       itr++
       updateCarousel()
+      updateDetails()
     })
     btnPrev.addEventListener("click", () => {
       itr--
       updateCarousel()
+      updateDetails()
     })
   }
 
