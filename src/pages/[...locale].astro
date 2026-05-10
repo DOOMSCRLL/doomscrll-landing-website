@@ -80,13 +80,13 @@ const dict = getDictionaryOf(currentLocale)
     ]}
   />
 
-  <section class="flex gap-6 px-12">
-    <section class="flex items-center gap-4">
+  <section class="flex gap-6 px-4">
+    <section class="flex items-center justify-center gap-4">
       <p class="font-serif text-xl font-medium tracking-tight">{dict.appFunnel.copy}</p>
       <SlabButton label={dict.appFunnel.cta} opensModalId="app-download-popup" />
     </section>
     <StarMark />
-    <section class="flex items-center gap-4">
+    <section class="flex items-center justify-center gap-4">
       <p class="font-serif text-xl font-medium tracking-tight">{dict.doomlitFunnel.copy}</p>
       <SlabAnchor href="#" label={dict.doomlitFunnel.cta} />
     </section>

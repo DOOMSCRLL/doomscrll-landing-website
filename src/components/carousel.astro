@@ -2,35 +2,38 @@
 import type ProjectPreview from "models/project-preview"
 
 import DoomscrllLogo from "./doomscrll-logo.astro"
-import IconExpandingArrow from "./icon-expanding-arrow.astro"
 import DoomscrllWordmark from "./doomscrll-wordmark.astro"
+import ExpandingArrowButton from "./expanding-arrow-button.astro"
 
 interface Props {
-  // FIXME: Make this prop required after testing.
-  items?: ProjectPreview[]
+  items: ProjectPreview[]
 }
 
-const { items = [] } = Astro.props
+const { items } = Astro.props
 
 const tileCount = items.length + 1
-const zRadius = Math.ceil(6 /*rem*/ / 2 / Math.tan(Math.PI / tileCount))
+const zRadius = Math.ceil(14 /*rem*/ / 2 / Math.tan(Math.PI / tileCount))
 const rotationOffset = 360 / tileCount
 ---
 
-<section id="carousel-container" class="flex flex-col items-center justify-center gap-12" data-tile-count={tileCount}>
-  <section class="relative h-24 w-24 perspective-midrange">
+<section
+  id="carousel-container"
+  class="flex h-full w-full flex-col items-center justify-center gap-20"
+  data-tile-count={tileCount}>
+  <!-- Carousel -->
+  <section class="relative h-56 w-56 perspective-[2400px]">
     <div
       id="carousel"
       class="absolute h-full w-full pt-6 transition-transform will-change-transform transform-3d motion-reduce:transition-none">
       <div
-        class="absolute flex h-24 w-24 items-center justify-center bg-primary backface-hidden"
+        class="absolute flex h-56 w-56 items-center justify-center rounded-2xl bg-primary backface-hidden"
         style={`transform: rotateY(0deg) translateZ(${zRadius}rem);`}>
         <DoomscrllLogo size="Full Height" />
       </div>
       {
         items.map((item, index) => (
           <div
-            class="absolute h-24 w-24 backface-hidden"
+            class="absolute h-56 w-56 overflow-hidden rounded-2xl backface-hidden"
             style={`transform: rotateY(${(index + 1) * rotationOffset}deg) translateZ(${zRadius}rem);`}>
             <img
               src={item.imageUrl}
@@ -44,18 +47,15 @@ const rotationOffset = 360 / tileCount
     </div>
   </section>
 
-  <section class="flex justify-between">
-    <button id="btn-carousel-prev" class="h-12 w-full rounded-2xl bg-primary fill-secondary px-4">
-      <IconExpandingArrow />
-    </button>
-    <div class="flex flex-col gap-4">
-      <div id="brand-wordmark-doomscrll" class="hidden h-full"><DoomscrllWordmark /></div>
-      <p id="project-title">DOOMSCROLL</p>
-      <p id="project-author">_notymc</p>
+  <!-- Interactions -->
+  <section class="flex h-min w-full items-center justify-center gap-8 px-4">
+    <ExpandingArrowButton direction="Left" id="btn-carousel-prev" />
+    <div class="flex flex-col items-center gap-2">
+      <div id="brand-wordmark" class="h-full opacity-60"><DoomscrllWordmark /></div>
+      <p id="project-title" class="hidden">DOOMSCROLL</p>
+      <p id="project-author" class="font-serif text-xl italic">&#64;_notymc</p>
     </div>
-    <button id="btn-carousel-next" class="h-12 w-full rounded-2xl bg-primary fill-secondary px-4">
-      <IconExpandingArrow />
-    </button>
+    <ExpandingArrowButton direction="Right" id="btn-carousel-next" />
   </section>
 </section>
 

@@ -1,0 +1,15 @@
+---
+import IconExpandingArrow from "./icon-expanding-arrow.astro"
+
+const { direction = "Right", id } = Astro.props
+---
+
+<button
+  {id}
+  class:list={[
+    "group",
+    "h-12 w-full rounded-2xl bg-primary fill-secondary px-4",
+    "not-disabled:hover:bg-secondary not-disabled:active:bg-accent",
+  ]}>
+  <IconExpandingArrow {direction} />
+</button>

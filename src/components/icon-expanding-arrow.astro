@@ -1,8 +1,23 @@
-<span role="complementary" class="complementary flex h-8 w-full items-center justify-center">
+---
+type Props = {
+  direction?: "Left" | "Right"
+}
+
+const { direction = "Right" } = Astro.props
+---
+
+<span
+  role="complementary"
+  class:list={[
+    "complementary flex h-8 w-full items-center justify-center",
+    { "transform-[scaleX(-1)]": direction === "Left" },
+  ]}>
   <!-- Arrow Tail: -->
-  <span class="arrow-tail h-full w-full bg-secondary"></span>
+  <span class="arrow-tail h-full w-full bg-secondary group-hover:bg-primary group-active:bg-primary"></span>
   <!-- Arrow Head: -->
-  <svg viewBox="0 0 24 24" class="h-full w-auto flex-none fill-secondary">
+  <svg
+    viewBox="0 0 24 24"
+    class="h-full w-auto flex-none fill-secondary group-hover:fill-primary group-active:fill-primary">
     <path
       d="m16.04 2-2 2a10 10 0 0 0 3.346 6.601H0V13.4h17.386A10 10 0 0 0 14.04 20l2 2.001a10 10 0 0 1 6.837-8.601A10 10 0 0 1 24 13.1v-2.202a10 10 0 0 1-1.123-.298A10 10 0 0 1 16.04 2"
     ></path>
