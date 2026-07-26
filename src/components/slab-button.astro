@@ -1,11 +1,12 @@
 ---
 type Props = {
   label: string
+  fit?: "max" | "min"
   opensModalId?: string
   closesModalId?: string
 }
 
-const { label, closesModalId, opensModalId } = Astro.props
+const { label, fit = "max", closesModalId, opensModalId } = Astro.props
 ---
 
 <button
@@ -14,9 +15,11 @@ const { label, closesModalId, opensModalId } = Astro.props
   class:list={[
     "font-mono font-bold tracking-wider text-primary uppercase",
     "flex items-center justify-center gap-4",
-    "h-12 w-full rounded-2xl bg-secondary px-4",
+    "h-12 rounded-2xl bg-secondary px-4",
+    fit === "max" ? "w-full" : "w-min",
     "not-disabled:hover:bg-secondary/40 not-disabled:active:bg-accent",
     "not-disabled:hover:text-primary not-disabled:active:text-primary",
   ]}>
-  {label}<span class="text-3xl">→</span>
+  {label}
+  {fit === "max" && <span class="text-3xl">→</span>}
 </button>
