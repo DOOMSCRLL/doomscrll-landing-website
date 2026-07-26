@@ -5,6 +5,7 @@ import PlatformPopup from "comps/app-popup.astro"
 import Carousel from "comps/carousel.astro"
 import DoomscrllLogo from "comps/doomscrll-logo.astro"
 import FunnelingText from "comps/funneling-text.astro"
+import LangSelector from "comps/lang-selector.astro"
 import SlabAnchor from "comps/slab-anchor.astro"
 import SlabButton from "comps/slab-button.astro"
 import StarMark from "comps/star-mark.astro"
@@ -25,13 +26,22 @@ const dict = getDictionaryOf(currentLocale)
 // TODO: Needs a mobile page as well...
 // TODO: Implement backend api to see daily projects
 // TODO: Tweak carousel spacing, sizing and perspective
-// TODO: Add language switcher
 // TODO: Change platform badges to point to app store links
 // TODO: Add under construction state to platform badges.
 ---
 
 <RootLayout locale={currentLocale} description={dict.meta.description} title={dict.meta.title}>
-  <DoomscrllLogo size="Small" />
+  <nav
+    class:list={[
+      "grid w-full grid-cols-[1fr_auto] items-center px-4",
+      "md:grid-cols-[1fr_auto_1fr] md:[&>span]:col-2",
+    ]}>
+    <DoomscrllLogo size="Small" />
+    <section class="flex w-min items-center gap-4 justify-self-end md:col-3">
+      <SlabButton label="?" fit="min" />
+      <LangSelector locale={currentLocale} />
+    </section>
+  </nav>
   <FunnelingText text={dict.copy} />
 
   <Carousel
