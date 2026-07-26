@@ -12,7 +12,7 @@ const { locale, description, title } = Astro.props
   -->
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
 
@@ -26,7 +26,7 @@ const { locale, description, title } = Astro.props
     <title>{title}</title>
 
     <script>
-      ;(function () {
+      /* ;(function () {
         const COLOR_THEMES = [
           "doomscrll", // also the default theme.
           "1bit-styx",
@@ -51,11 +51,15 @@ const { locale, description, title } = Astro.props
         const theme = COLOR_THEMES[weeklyCycle % COLOR_THEMES.length]!
 
         document.documentElement.setAttribute("data-theme", theme)
-      })()
+      })() */
     </script>
   </head>
 
-  <body class="flex flex-col items-center justify-center py-4">
+  <body
+    class:list={[
+      "flex min-h-dvh w-full flex-col overflow-y-auto py-2",
+      "md:items-center md:justify-center md:overflow-hidden md:py-4",
+    ]}>
     <slot />
   </body>
 </html>
