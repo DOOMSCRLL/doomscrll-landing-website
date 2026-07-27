@@ -1,0 +1,85 @@
+---
+import DoomscrllLogo from "comps/doomscrll-logo.astro"
+import type ProjectPreview from "models/project-preview"
+
+interface Props {
+  items: ProjectPreview[]
+}
+
+const { items } = Astro.props
+---
+
+<section id="slider-container" class="w-full overflow-hidden mask-fade-x md:hidden">
+  <section id="slider" class="flex w-max items-center gap-6 will-change-transform">
+    <div class="flex h-40 w-40 shrink-0 items-center justify-center overflow-hidden">
+      <DoomscrllLogo size="Small" />
+    </div>
+    {
+      items.map(item => (
+        <div class="h-40 w-40 shrink-0 overflow-hidden rounded-2xl">
+          <img
+            src={item.imageUrl}
+            alt={item.name}
+            loading="lazy"
+            class="block h-full w-full object-cover object-center"
+          />
+        </div>
+      ))
+    }
+  </section>
+</section>
+
+<script>
+  function configSlider() {
+    const container = document.getElementById("slider-container")
+    const slider = document.getElementById("slider")
+
+    if (!container || !slider) return
+
+    const SPEED_SCROLL = 0.07
+    const GAP_SLIDER = 24 //px | 1.5rem
+
+    let position = 0
+    let lastTimestamp = performance.now()
+
+    let isVisible = true
+    let rafId: number
+
+    let firstEl = slider.firstElementChild as HTMLElement
+    let sliderWidth = firstEl.offsetWidth
+
+    function animateSlide(currentTimestamp: DOMHighResTimeStamp) {
+      if (!isVisible) return
+
+      const delta = Math.min(currentTimestamp - lastTimestamp, 50)
+      lastTimestamp = currentTimestamp
+
+      position += SPEED_SCROLL * delta
+
+      if (position >= sliderWidth + GAP_SLIDER) {
+        slider!.appendChild(firstEl)
+        position -= sliderWidth + GAP_SLIDER // + GAP
+
+        firstEl = slider!.firstElementChild as HTMLElement
+        sliderWidth = firstEl.offsetWidth
+      }
+
+      slider!.style.transform = `translate3d(-${position}px, 0, 0)`
+      rafId = requestAnimationFrame(animateSlide)
+    }
+
+    new ResizeObserver(() => (sliderWidth = firstEl.offsetWidth)).observe(slider)
+    new IntersectionObserver(entries => {
+      isVisible = entries[0]?.isIntersecting ?? false
+      if (isVisible) {
+        lastTimestamp = performance.now()
+        rafId = requestAnimationFrame(animateSlide)
+      } else {
+        cancelAnimationFrame(rafId)
+      }
+    }).observe(container)
+  }
+
+  configSlider()
+  document.addEventListener("astro:page-load", configSlider)
+</script>
