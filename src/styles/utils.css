@@ -12,3 +12,13 @@
   scrollbar-width: thin;
   scrollbar-color: var(--color-brand) transparent;
 }
+
+@utility mask-fade-x {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+}
