@@ -29,7 +29,7 @@ export const PROJECTS_FALLBACK = [
   {
     name: "Phasmophobia",
     author: "Kinetic Games",
-    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/739630/hero_capsule.jpg",
+    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/739630/library_600x900.jpg",
   },
   {
     name: "Hollow Knight",
@@ -39,7 +39,7 @@ export const PROJECTS_FALLBACK = [
   {
     name: "Meccha Chameleon",
     author: "Lemorion_1124",
-    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4704690/hero_capsule.jpg",
+    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2993070/library_600x900.jpg",
   },
   {
     name: "Valheim",
@@ -74,7 +74,7 @@ export const PROJECTS_FALLBACK = [
   {
     name: "Peak",
     author: "Aggro Crab",
-    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3527290/hero_capsule.jpg",
+    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3153500/hero_capsule.jpg",
   },
   {
     name: "Deep Rock Galactic",
@@ -109,7 +109,7 @@ export const PROJECTS_FALLBACK = [
   {
     name: "Papers, Please",
     author: "3909 LLC",
-    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/239030/hero_capsule.jpg",
+    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/239030/library_600x900.jpg",
   },
   {
     name: "Slime Rancher",
@@ -129,7 +129,7 @@ export const PROJECTS_FALLBACK = [
   {
     name: "Factorio",
     author: "Wube Software",
-    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/427520/hero_capsule.jpg",
+    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/427520/library_600x900.jpg",
   },
   {
     name: "Astroneer",
@@ -164,7 +164,7 @@ export const PROJECTS_FALLBACK = [
   {
     name: "Shovel Knight",
     author: "Yacht Club Games",
-    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/250760/hero_capsule.jpg",
+    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/250760/library_600x900.jpg",
   },
   {
     name: "Goat Simulator",
@@ -174,12 +174,12 @@ export const PROJECTS_FALLBACK = [
   {
     name: "Darkest Dungeon",
     author: "Red Hook Studios",
-    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/262060/hero_capsule.jpg",
+    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/262060/library_600x900.jpg",
   },
   {
     name: "Super Meat Boy",
     author: "Team Meat",
-    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/40800/hero_capsule.jpg",
+    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/40800/library_600x900.jpg",
   },
   {
     name: "Superhot",
@@ -219,7 +219,7 @@ export const PROJECTS_FALLBACK = [
   {
     name: "Fez",
     author: "Polytron Corporation",
-    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/224760/hero_capsule.jpg",
+    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/224760/library_600x900.jpg",
   },
   {
     name: "Hades",
@@ -234,7 +234,7 @@ export const PROJECTS_FALLBACK = [
   {
     name: "Loop Hero",
     author: "Four Quarters",
-    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1292950/hero_capsule.jpg",
+    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1292950/library_600x900.jpg",
   },
   {
     name: "Spelunky",
@@ -249,7 +249,7 @@ export const PROJECTS_FALLBACK = [
   {
     name: "Undertale",
     author: "Toby Fox",
-    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/391540/hero_capsule.jpg",
+    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/391540/library_600x900.jpg",
   },
 ] satisfies Array<ProjectPreview>
 
