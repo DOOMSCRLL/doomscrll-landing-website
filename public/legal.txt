@@ -1,0 +1,64 @@
+DOOMSCRLL - TERMS OF SERVICE & MERCHANT POLICIES
+Last Updated: 29.07.2026
+
+1. DEFINITIONS & LEXICON
+- "DOOMSCRLL" (or "the Platform"): The overarching globally accessible digital discovery ecosystem.
+- "DOOMLIT": A strictly time-gated, 24-hour showcase reservation on the primary grid.
+- "The Ledger": The underlying system that enforces reservation rules, validates drops, and maintains the 24-hour cycle.
+- "Independent": A creator utilizing the DOOMLIT web application to reserve and manage a drop.
+- "Audience": Users accessing the ephemeral daily feed without utilizing an account.
+
+2. PLATFORM ARCHITECTURE & SCOPE
+DOOMSCRLL is provided globally and operates across multiple distinct environments:
+- The Marketing Site: A static, informational landing page without user authentication.
+- The DOOMLIT Web Application: The private portal for Independents to manage profiles, pay for reservations, and edit project details. This is the only environment where user accounts and authentication are stored and processed.
+- The DOOMSCRLL Audience Applications: The primary daily feed available via a public web application and native mobile applications. These audience-facing clients do not require user accounts, logins, or data storage.
+- The DOOMSCRLL API: The backend infrastructure facilitating data transfer between the DOOMLIT portal and the public audience clients.
+
+3. LEGAL PREAMBLE & MERCHANT OF RECORD
+These Terms of Service ("Terms") govern your access to the Platform, operated by Yakup Murat Çaylak ("Operator", "we", "us"). By accessing the Platform or reserving a DOOMLIT, you agree to be bound by these Terms.
+Our order process is conducted by our online reseller, Lemon Squeezy. Lemon Squeezy acts as the Merchant of Record for all orders, handling all customer service inquiries, taxes, and returns regarding payments and billing globally.
+
+4. DOOMLIT RESERVATION RULES (THE LEDGER)
+To maintain an egalitarian and curated feed, The Ledger enforces strict mechanical constraints on all reservations. By using the DOOMLIT web application, you agree to the following limits:
+- Maximum of two (2) DOOMLIT showcases per Independent profile per calendar month.
+- Maximum of two (2) DOOMLIT showcases per specific project per calendar month.
+Any attempt to bypass these limits via multiple accounts or scripting will result in the immediate revocation of the reserved slots without a refund.
+
+5. PAYMENTS, PRICING & REFUNDS
+- DOOMLIT Slots: Pricing for DOOMLIT reservations is listed dynamically on the DOOMLIT web application at the time of purchase. 
+- Pre-Drop Cancellations: Reservations may be canceled and fully refunded if the request is submitted at least 48 hours prior to the scheduled 00:00 UTC drop date.
+- Active Drops: Once a 24-hour DOOMLIT cycle has commenced, the slot fee is strictly non-refundable.
+
+6. EPHEMERAL DATA & NO COMMERCIAL GUARANTEES
+The live DOOMSCRLL feed is ephemeral by design and provided on an "AS IS" and "AS AVAILABLE" basis. 
+Purchasing a DOOMLIT slot guarantees placement on the front-page grid for exactly 24 hours. We strictly DO NOT guarantee any resulting visibility, user engagement, outbound clicks, project downloads, financial sales, or increased audience metrics. The Operator is not liable for the commercial performance of any project showcased on the Platform.
+
+7. CREATOR INTELLECTUAL PROPERTY & ACCEPTABLE USE
+Creators retain 100% ownership of all software, art, music, and text submitted to DOOMSCRLL. By reserving a DOOMLIT, you grant DOOMSCRLL a non-exclusive, worldwide, royalty-free license to display your submitted assets on the live grid for your reserved 24 hours. We strictly enforce community safety and do not permit illegal software, hate speech, explicit material (including pornographic content), gore, violence, abuse, any content that is not safe for work/life (NSFW/NSFL), unethical or illegal content, or low-effort mass-generated spam. DOOMSCRLL reserves the absolute right to terminate a broadcast immediately, without refund, for violating these conditions.
+
+8. DOOMSCRLL INTELLECTUAL PROPERTY & OWNERSHIP
+All rights, title, and interest in and to the DOOMSCRLL name, brand, brand identity, logo, wordmarks, theme colors, custom component design systems, websites, web applications, mobile applications, underlying system architecture, and specific platform terminology (including, but not limited to, "DOOMLIT" and "The Ledger") are the sole and exclusive intellectual property of Yakup Murat Çaylak. From conceptualization to execution, this intellectual property is strictly protected. No license or right is granted to any user to copy, reproduce, reverse-engineer, or commercially exploit the DOOMSCRLL brand or architecture.
+
+9. THIRD-PARTY TRADEMARKS & PLATFORMS
+The DOOMSCRLL ecosystem frequently references operating systems, storefronts, and external digital platforms (e.g., Windows, Linux, Apple, Steam) through text, icons, and wordmarks. All such trademarks, logos, and brand names are the sole property of their respective owners. DOOMSCRLL claims no affiliation with, endorsement by, or ownership of these external entities. Users must refer to the respective platforms for their own legal guidelines and terms of use.
+
+10. INFRASTRUCTURE & TECHNOLOGY ATTRIBUTION
+DOOMSCRLL is built utilizing a robust technology stack. We respectfully attribute the following open-source and proprietary technologies, frameworks, and libraries utilized in this project: 
+TypeScript, Nodejs, Vite, Astro, Svelte, SvelteKit, TailwindCSS, Storybook, ESLint, Prettier, jSquash, Wrangler, Docker, Fastify, PostgreSQL, Drizzle ORM, Zod, Plunk, toad-scheduler, AWS S3 SDK, zrok, Vitest, Flutter, and Lemon Squeezy (lemon.js, Webhooks). 
+These technologies are the property of their respective maintainers and are utilized under their specific licenses. DOOMSCRLL claims no ownership over these underlying third-party technologies. For legal and licensing details regarding these tools, please refer to their official documentation.
+
+11. DATA PRIVACY & INFRASTRUCTURE LOCATION
+DOOMSCRLL is committed to absolute data privacy. We do not share, sell, or process user information for any third-party purposes, including AI training, data mining, or data brokerage. 
+Our digital infrastructure is primarily located in the European Union (EU) to ensure rigorous data protection standards:
+- Websites and web applications are hosted via Cloudflare Workers (EU region).
+- The backend server, database, and API are deployed on an EU-based Virtual Private Server (VPS), with API endpoints routed through Cloudflare Workers.
+- Image assets and media files are securely stored in Cloudflare R2 buckets within the EU region.
+
+12. LIMITATION OF LIABILITY & GOVERNING LAW
+While DOOMSCRLL is a globally accessible platform, these Terms shall be governed by and construed in accordance with the laws of Türkiye, without regard to its conflict of law provisions. To the maximum extent permitted by law, DOOMSCRLL and its Operator shall not be liable for any indirect or consequential damages. Total liability is strictly limited to the amount paid for the specific DOOMLIT slot.
+
+13. CONTACT INFORMATION
+For legal inquiries and compliance: legal@doomscrll.com
+For general support, feedback, and all other inquiries: hello@doomscrll.com
+Address: Balıkesir, TÜRKİYE
