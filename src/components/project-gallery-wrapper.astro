@@ -1,0 +1,13 @@
+---
+import Carousel from "comps/carousel.astro"
+import LinearSlider from "comps/linear-slider.astro"
+import { getFallbackProjects } from "repos/fallback-projects"
+import { getLiveProjects } from "repos/projects"
+
+const live = await getLiveProjects(9)
+const missing = 9 - live.length
+const items = missing > 0 ? [...live, ...getFallbackProjects(missing)] : live
+---
+
+<LinearSlider {items} />
+<Carousel {items} />
