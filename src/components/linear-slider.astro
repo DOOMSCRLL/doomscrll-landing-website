@@ -9,7 +9,7 @@ interface Props {
 const { items } = Astro.props
 ---
 
-<section id="slider-container" class="w-full overflow-hidden mask-fade-x md:hidden">
+<section id="slider-container" aria-hidden="true" class="w-full overflow-hidden mask-fade-x md:hidden">
   <section id="slider" class="flex w-max items-center gap-6 will-change-transform">
     <div class="flex h-40 w-40 shrink-0 items-center justify-center overflow-hidden">
       <DoomscrllLogo size="Small" />
