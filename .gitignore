@@ -1,7 +1,11 @@
 # build output
 dist/
-# generated types
+build/
+
+# generated types & cache
 .astro/
+.wrangler/
+.cloudflare/
 
 # dependencies
 node_modules/
@@ -12,13 +16,13 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
 # environment variables
 .env
-.env.production
+.env.*
 
-# macOS-specific files
+# OS-specific files
 .DS_Store
+Thumbs.db
 
 # jetbrains setting folder
 .idea/
