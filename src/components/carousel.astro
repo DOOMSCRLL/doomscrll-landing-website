@@ -76,8 +76,6 @@ const rotationOffset = 360 / tileCount
 
     const items = JSON.parse(wrapper.dataset.items!)
 
-    /*const SIZE_FONT_ROOT = parseFloat(getComputedStyle(document.documentElement).fontSize)
-    const SIZE_TILE = parseFloat(wrapper.dataset.tileSizeRem!) * SIZE_FONT_ROOT*/
     const COUNT_TILES = items.length + 1
     const OFFSET_ROTATION = 360 / COUNT_TILES
 
@@ -91,7 +89,6 @@ const rotationOffset = 360 / tileCount
       if (carousel === null) throw Error("ERROR (configCarousel > updateCarousel): `div.#carousel` is null.")
 
       carousel.style.transform = `rotateY(${-OFFSET_ROTATION * itr}deg)`
-      // const activeIndex = ((iterator % length) + length) % length;
     }
 
     function updateDetails() {
@@ -107,8 +104,9 @@ const rotationOffset = 360 / tileCount
         title.classList.remove("hidden")
         wordmark.classList.add("hidden")
 
-        title.textContent = items[activeIndex].name
-        author.textContent = "@" + items[activeIndex].author
+        const activeItem = items[activeIndex - 1] ?? items[0]
+        title.textContent = activeItem?.name || "DOOMSCROLL"
+        author.textContent = "@" + (activeItem?.author || "_notymc")
       }
     }
 
