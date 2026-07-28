@@ -259,7 +259,7 @@ function getRandomValuesBetween(min: number, max: number, count: number): number
   return Array.from(values)
 }
 
-export function getFallbackProjects(count = 7): Array<ProjectPreview> {
+export function getFallbackProjects(count = 9): Array<ProjectPreview> {
   return getRandomValuesBetween(0, PROJECTS_FALLBACK.length - 1, count).map(
     (i) => PROJECTS_FALLBACK[i] as ProjectPreview,
   )
