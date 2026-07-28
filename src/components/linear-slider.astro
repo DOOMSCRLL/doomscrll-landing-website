@@ -63,14 +63,13 @@ const { items } = Astro.props
         position -= sliderWidth + GAP_SLIDER // + GAP
 
         firstEl = slider!.firstElementChild as HTMLElement
-        sliderWidth = firstEl.offsetWidth
       }
 
       slider!.style.transform = `translate3d(-${position}px, 0, 0)`
       rafId = requestAnimationFrame(animateSlide)
     }
 
-    new ResizeObserver(() => (sliderWidth = firstEl.offsetWidth)).observe(slider)
+    new ResizeObserver(() => (sliderWidth = firstEl.offsetWidth)).observe(container)
     new IntersectionObserver(entries => {
       isVisible = entries[0]?.isIntersecting ?? false
       if (isVisible) {
