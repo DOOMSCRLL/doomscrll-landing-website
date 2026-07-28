@@ -21,6 +21,8 @@ const { items } = Astro.props
             src={item.imageUrl}
             alt={item.name}
             loading="lazy"
+            decoding="async"
+            draggable="false"
             class="block h-full w-full object-cover object-center"
           />
         </div>
