@@ -1,0 +1,25 @@
+---
+import { getDictionaryOf, type Locale } from "repos/locales"
+
+import Popup from "./popup.astro"
+import SlabAnchor from "./slab-anchor.astro"
+import SlabButton from "./slab-button.astro"
+
+interface Props {
+  locale: Locale
+  dialogId: string
+}
+
+const { locale, dialogId } = Astro.props
+const dict = getDictionaryOf(locale).helpPopup
+---
+
+<Popup {dialogId}>
+  <header class="flex w-full items-center justify-between">
+    <h1 class="font-serif text-4xl tracking-tight text-secondary italic">{dict.header}</h1>
+    <SlabButton label="X" fit="min" closesModalId={dialogId} />
+  </header>
+  <SlabAnchor href="/help" label={dict.labelHelp} />
+  <SlabAnchor href="/legal.txt" label={dict.labelLegal} />
+  <SlabAnchor href="mailto:hello@doomscrll.com" label={dict.labelSupport} />
+</Popup>
