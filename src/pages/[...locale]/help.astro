@@ -21,7 +21,7 @@ const dict = getDictionaryOf(currentLocale).helpPage
 <RootLayout locale={currentLocale} description={dict.meta.description} title={`${dict.meta.title} - Help`}>
   <nav class="grid w-full grid-cols-[1fr_auto_1fr] items-center px-4">
     <section class="justify-self-start">
-      <SlabAnchor href="/" label={dict.labelActionHome} arrowDirection="left" />
+      <SlabAnchor href=`/${currentLocale}` label={dict.labelActionHome} arrowDirection="left" />
     </section>
     <DoomscrllLogo size="Small" />
     <section class="justify-self-end">
