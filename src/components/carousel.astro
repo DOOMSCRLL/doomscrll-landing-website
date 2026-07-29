@@ -11,8 +11,11 @@ interface Props {
 
 const { items } = Astro.props
 
+const WIDTH_TILE_REM = 14
+const GAP_TILE_REM = 2
+
 const tileCount = items.length + 1
-const zRadius = Math.ceil(14 /*rem*/ / 2 / Math.tan(Math.PI / tileCount))
+const zRadius = Math.ceil((WIDTH_TILE_REM + GAP_TILE_REM) / 2 / Math.tan(Math.PI / tileCount))
 const rotationOffset = 360 / tileCount
 ---
 
@@ -51,10 +54,14 @@ const rotationOffset = 360 / tileCount
   <!-- Interactions -->
   <section class="grid h-min w-full grid-cols-3 gap-16 px-4">
     <ExpandingArrowButton direction="Left" id="btn-carousel-prev" />
-    <div class="flex h-full w-full flex-col items-center gap-2">
+    <div class="flex h-full w-full flex-col items-center gap-2 overflow-hidden">
       <div id="brand-wordmark" class="h-full opacity-60"><DoomscrllWordmark /></div>
-      <p id="project-title" class="hidden font-serif text-6xl">DOOMSCROLL</p>
-      <p id="project-author" class="font-serif text-xl italic">&#64;_notymc</p>
+      <p
+        id="project-title"
+        class="hidden w-full overflow-hidden text-center font-serif text-6xl text-nowrap text-ellipsis">
+        DOOMSCROLL
+      </p>
+      <p id="project-author" class="overflow-hidden font-serif text-xl text-ellipsis italic">&#64;_notymc</p>
     </div>
     <ExpandingArrowButton direction="Right" id="btn-carousel-next" />
   </section>
