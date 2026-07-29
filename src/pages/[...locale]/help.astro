@@ -46,18 +46,18 @@ const dict = getDictionaryOf(currentLocale).helpPage
         </details>
       ))
     }
-    <hr class="w-full border-secondary" />
-    <footer class="flex w-full flex-col items-center gap-10 px-4 text-secondary">
-      <p class="text-inverse font-serif tracking-wide italic">
-        ➝ {dict.footer.contentContactPrefix}
-        <a href="mailto:hello@doomscrll.com" class="not-italic underline underline-offset-4">hello@doomscrll.com</a>
-      </p>
-      <p class="text-inverse font-serif tracking-wide italic">
-        ➝ {dict.footer.contentLegalPrefix}
-        <a href="https://doomscrll.com/legal.txt" class="not-italic underline underline-offset-4"
-          >doomscrll.com/legal.txt</a
-        >
-      </p>
-    </footer>
   </main>
+  <footer class="flex w-full flex-col items-center gap-4 px-4 text-secondary">
+    <hr class="w-full border-secondary" />
+    <p class="text-inverse font-serif tracking-wide italic">
+      ➝ {dict.footer.contentContactPrefix}
+      <a href="mailto:hello@doomscrll.com" class="not-italic underline underline-offset-4">hello@doomscrll.com</a>
+    </p>
+    <p class="text-inverse font-serif tracking-wide italic">
+      ➝ {dict.footer.contentLegalPrefix}
+      <a href="https://doomscrll.com/legal.txt" class="not-italic underline underline-offset-4"
+        >doomscrll.com/legal.txt</a
+      >
+    </p>
+  </footer>
 </RootLayout>
