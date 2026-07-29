@@ -50,7 +50,10 @@ const dict = getDictionaryOf(currentLocale)
       <StarMark />
     </div>
     <section class="flex flex-col items-center justify-center gap-4 md:flex-row">
-      <p class="font-serif text-xl font-medium tracking-tight">{dict.doomlitFunnel.copy}</p>
+      <p class="font-serif text-xl font-medium tracking-tight">
+        {dict.doomlitFunnel.copy}
+        <span class="italic">{dict.doomlitFunnel.subtext}</span>
+      </p>
       <SlabAnchor href="https://doomlit.doomscrll.com" label={dict.doomlitFunnel.cta} />
     </section>
   </section>
