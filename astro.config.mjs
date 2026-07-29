@@ -14,8 +14,4 @@ export default defineConfig({
   },
 
   site: "https://doomscrll.com",
-  redirects: {
-    "/en": "/",
-    "/en/[...locale]": "/[...locale]",
-  },
 });
