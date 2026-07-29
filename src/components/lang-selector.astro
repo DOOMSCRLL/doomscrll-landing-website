@@ -1,12 +1,13 @@
 ---
 type Props = {
   locale: "en" | "tr"
+  subpath?: string
 }
 
-const { locale } = Astro.props
+const { locale, subpath = "" } = Astro.props
 
 const label = locale === "en" ? "🇹🇷 TÜRKÇE" : "🇺🇸 ENGLISH"
-const href = locale === "en" ? "/tr" : "/"
+const href = locale === "en" ? `/tr${subpath}` : subpath || "/"
 ---
 
 <a
