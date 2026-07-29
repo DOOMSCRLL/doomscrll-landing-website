@@ -45,7 +45,7 @@ export default {
     },
     title: "Yardım Konuları",
     body: "DOOMSCRLL projesi hakkında daha fazla şey öğrenebilir, SSS'ye bakabilirsin.",
-    labelActionHome: "Geri dön",
+    labelActionHome: "Geri",
     helpArticles: {
       title: "Yardım Konuları",
       body: "DOOMSCRLL projesi hakkında daha fazla şey öğrenebilir, SSS'ye bakabilirsin.",
