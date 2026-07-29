@@ -33,7 +33,7 @@ export default {
     labelClose: "Geri dön",
   },
   helpPopup: {
-    header: "Yardım ve destek:",
+    header: "Yardım Menüsü:",
     labelHelp: "Yardım ve SSS",
     labelLegal: "Hizmet Şartları ve Yasal",
     labelSupport: "Desteğe ulaş",
