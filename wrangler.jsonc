@@ -7,7 +7,7 @@
   ],
   "assets": {
     "binding": "ASSETS",
-    "directory": "dist"
+    "directory": "dist/client"
   },
   "observability": {
     "logs": {
@@ -15,15 +15,15 @@
       "invocation_logs": true
     }
   },
-  "routes": [
+  "kv_namespaces": [
     {
-      "pattern": "doomscrll.com",
-      "custom_domain": true
-    },
-    {
-      "pattern": "www.doomscrll.com",
-      "custom_domain": true
+      "binding": "SESSION",
+      "id": "d4546f7ee709493e87c14b79c1ea1e8e"
     }
+  ],
+  "routes": [
+    "doomscrll.com/*",
+    "www.doomscrll.com/*"
   ],
   "workers_dev": false,
   "preview_urls": false
