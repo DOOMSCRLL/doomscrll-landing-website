@@ -20,8 +20,13 @@ export default {
     subtext: "Yalnızca 1$!",
   },
   appPopup: {
-    header: "Uygulamayı edinin!",
+    header: "Uygulamayı ziyaret edin!",
     copy: "DOOMSCRLL uygulamasını indirerek bağımsız projeleri keşfedin. Katalog hergün değişir ve uygulamayı kullanmak için bir hesaba ya da para ödemenize gerek yok.",
+    copyWebapp:
+      "DOOMSCRLL web uygulamasını ziyaret edip, günün bağımsız projelerini keşfedin! Günlük sunulan proje sayısı 40 ile sınırlıdır ve her gün yeni projeler sunulur.",
+    subtextAccount: "(DOOMSCRLL uygulamalarını kullanmak için bir hesap gerekmez ve tamamen ücretsizdir.)",
+    subtextApps: "(Mobil uygulamalar yakında yayınlanacak!)",
+    labelVisitWebapp: "Web Uygulamasına Git",
     altTextAppStore: "Apple App Store'dan indirin.",
     altTextPlayStore: "Google Play Store'dan indirin.",
     labelClose: "Geri dön",

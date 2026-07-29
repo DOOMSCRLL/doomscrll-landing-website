@@ -18,8 +18,13 @@ export default {
     subtext: "Only for 1$!",
   },
   appPopup: {
-    header: "Get the app!",
+    header: "Visit the app!",
     copy: "Download DOOMSCRLL app to explore independent projects. Catalogue changes everyday, and you don't need an account, or pay to use the app.",
+    copyWebapp:
+      "Visit the DOOMSCRLL web app to explore today's independent projects! There are upto 40 projects each day, with the selections changing daily.",
+    subtextAccount: "(DOOMSCRLL apps do not require an account to use, and are completely free.)",
+    subtextApps: "(Mobile apps are to be released soon!)",
+    labelVisitWebapp: "Visit the web app",
     altTextAppStore: "Download on the Apple App Store",
     altTextPlayStore: "Get it on Google Play Store",
     labelClose: "Return",
