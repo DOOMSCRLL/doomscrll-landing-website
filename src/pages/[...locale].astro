@@ -1,9 +1,10 @@
 ---
 import type { GetStaticPaths } from "astro"
 
-import PlatformPopup from "comps/app-popup.astro"
+import AppPopup from "comps/app-popup.astro"
 import DoomscrllLogo from "comps/doomscrll-logo.astro"
 import FunnelingText from "comps/funneling-text.astro"
+import HelpPopup from "comps/help-popup.astro"
 import LangSelector from "comps/lang-selector.astro"
 import ProjectGalleryWrapper from "comps/project-gallery-wrapper.astro"
 import SlabAnchor from "comps/slab-anchor.astro"
@@ -24,6 +25,8 @@ const { currentLocale } = Astro.props
 const dict = getDictionaryOf(currentLocale)
 
 // TODO: Tweak carousel spacing, sizing and perspective
+// TODO: Tweak carousel text styling
+// TODO: Tweak desktop page layout
 // TODO: Change platform badges to point to app store links
 // TODO: Add under construction state to platform badges.
 ---
@@ -37,7 +40,7 @@ const dict = getDictionaryOf(currentLocale)
     <DoomscrllLogo size="Small" />
     <section class="flex w-min items-center gap-4 justify-self-end md:col-3">
       <LangSelector locale={currentLocale} />
-      <SlabButton label="?" fit="min" />
+      <SlabButton label="?" fit="min" opensModalId="help-popup" />
     </section>
   </nav>
   <FunnelingText text={dict.copy} />
@@ -56,5 +59,6 @@ const dict = getDictionaryOf(currentLocale)
     </section>
   </section>
 
-  <PlatformPopup locale={currentLocale} dialogId="app-download-popup" />
+  <AppPopup locale={currentLocale} dialogId="app-download-popup" />
+  <HelpPopup locale={currentLocale} dialogId="help-popup" />
 </RootLayout>
