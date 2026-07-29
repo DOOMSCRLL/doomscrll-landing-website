@@ -1,0 +1,27 @@
+---
+const { dialogId } = Astro.props
+---
+
+<dialog
+  id={dialogId}
+  class:list={[
+    "m-auto box-border h-fit max-h-[85dvh] min-h-0 w-[90vw] md:w-[40vw]",
+    "rounded-2xl border-3 border-secondary bg-primary p-6",
+    "flex-col items-center justify-start gap-6 open:flex",
+    "backdrop:bg-[black]/60 backdrop:backdrop-blur-xs",
+  ]}>
+  <slot />
+</dialog>
+
+<script>
+  const dialogs = document.querySelectorAll("dialog")
+
+  dialogs.forEach(dialog => {
+    const id = dialog.id
+    const openBtn = document.querySelector(`[data-modal-open="${id}"]`)
+    const closeBtn = document.querySelector(`[data-modal-close="${id}"]`)
+
+    openBtn?.addEventListener("click", () => dialog.showModal())
+    closeBtn?.addEventListener("click", () => dialog.close())
+  })
+</script>
