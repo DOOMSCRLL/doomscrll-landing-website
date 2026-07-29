@@ -4,9 +4,10 @@
 type Props = {
   href: string
   label: string
+  arrowDirection?: "right" | "left"
 }
 
-const { href, label } = Astro.props
+const { href, label, arrowDirection = "right" } = Astro.props
 ---
 
 <a
@@ -19,6 +20,7 @@ const { href, label } = Astro.props
     "not-disabled:hover:bg-secondary not-disabled:active:bg-accent not-disabled:active:before:border-accent",
     "not-disabled:hover:text-primary not-disabled:active:text-primary",
   ]}>
+  {arrowDirection === "left" && <span class="text-3xl">←</span>}
   {label}
-  <span class="text-3xl">→</span>
+  {arrowDirection === "right" && <span class="text-3xl">→</span>}
 </a>
