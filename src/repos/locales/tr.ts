@@ -39,7 +39,13 @@ export default {
     labelSupport: "Desteğe ulaş",
   },
   helpPage: {
-    meta: {},
+    meta: {
+      title: "Yardım Makaleleri ve SSS",
+      description: "Bu sayfada, DOOMSCRLL hakkında yardım makaleleri ve sıkça sorulan soruları bulabilirsin.",
+    },
+    title: "Yardım Konuları",
+    body: "DOOMSCRLL projesi hakkında daha fazla şey öğrenebilir, SSS'ye bakabilirsin.",
+    labelActionHome: "Geri dön",
     helpArticles: {
       title: "Yardım Konuları",
       body: "DOOMSCRLL projesi hakkında daha fazla şey öğrenebilir, SSS'ye bakabilirsin.",
@@ -177,6 +183,10 @@ export default {
         contentContactPrefix: "Herhangi bir sorunuz varsa, bize ulaşmaktan çekinmeyin:",
         contentLegalPrefix: "Yasal bilgilendirme ve marka tescilleri için şu adresi ziyaret edin:",
       },
+    },
+    footer: {
+      contentContactPrefix: "Herhangi bir sorunuz varsa, bize ulaşmaktan çekinmeyin:",
+      contentLegalPrefix: "Yasal bilgilendirme ve marka tescilleri için şu adresi ziyaret edin:",
     },
   },
 } satisfies Dictionary

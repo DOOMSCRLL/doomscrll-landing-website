@@ -38,7 +38,14 @@ export default {
     labelSupport: "Contact support",
   },
   helpPage: {
-    meta: {},
+    meta: {
+      title: "Help Articles & FAQ",
+      description:
+        "You can find articles related to how DOOMSCRLL works, parts of it, and frequently asked questions on this page.",
+    },
+    title: "Help Topics",
+    body: "You can learn more about the DOOMSCRLL project, and find FAQ.",
+    labelActionHome: "Home",
     helpArticles: {
       title: "Help Topics",
       body: "You can learn more about the DOOMSCRLL project, and find FAQ.",
@@ -166,6 +173,10 @@ export default {
         contentContactPrefix: "If you have any questions, don't hesitate to reach out:",
         contentLegalPrefix: "For legal information, and trademarks, refer to:",
       },
+    },
+    footer: {
+      contentContactPrefix: "If you have any questions, don't hesitate to reach out:",
+      contentLegalPrefix: "For legal information, and trademarks, refer to:",
     },
   },
 }
