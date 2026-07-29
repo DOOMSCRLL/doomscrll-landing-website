@@ -1,0 +1,63 @@
+---
+import type { GetStaticPaths } from "astro"
+
+import DoomscrllLogo from "comps/doomscrll-logo.astro"
+import LangSelector from "comps/lang-selector.astro"
+import SlabAnchor from "comps/slab-anchor.astro"
+import RootLayout from "layouts/root-layout.astro"
+
+import { getDictionaryOf, kDefaultLocale, kLocales } from "repos/locales"
+
+export const getStaticPaths = (() =>
+  kLocales.map(locale => ({
+    params: { locale: locale === kDefaultLocale ? undefined : locale },
+    props: { currentLocale: locale },
+  }))) satisfies GetStaticPaths
+
+const { currentLocale } = Astro.props
+const dict = getDictionaryOf(currentLocale).helpPage
+---
+
+<RootLayout locale={currentLocale} description={dict.meta.description} title={`${dict.meta.title} - Help`}>
+  <nav class="grid w-full grid-cols-[1fr_auto_1fr] items-center px-4">
+    <section class="justify-self-start">
+      <SlabAnchor href="/" label={dict.labelActionHome} arrowDirection="left" />
+    </section>
+    <DoomscrllLogo size="Small" />
+    <section class="justify-self-end">
+      <LangSelector locale={currentLocale} subpath="/help" />
+    </section>
+  </nav>
+  <main class="flex h-full w-full flex-col gap-6 overflow-y-auto px-4 py-12">
+    <section>
+      <h1 class="mb-4 font-serif text-2xl text-secondary">{dict.title}</h1>
+      <p class="font-serif text-secondary">{dict.body}</p>
+    </section>
+    <hr class="w-full border-secondary" />
+    {
+      dict.helpArticles.topics.map(topic => (
+        <details
+          name="help-topic"
+          class="group flex-col gap-4 rounded-lg border-accent open:flex open:border open:p-2 hover:bg-secondary/10">
+          <summary class="border-secondary font-serif text-secondary group-open:border-b group-open:italic">
+            {topic.label}
+          </summary>
+          <p class="font-serif text-secondary">{topic.body}</p>
+        </details>
+      ))
+    }
+    <hr class="w-full border-secondary" />
+    <footer class="flex w-full flex-col items-center gap-10 px-4 text-secondary">
+      <p class="text-inverse font-serif tracking-wide italic">
+        ➝ {dict.footer.contentContactPrefix}
+        <a href="mailto:hello@doomscrll.com" class="not-italic underline underline-offset-4">hello@doomscrll.com</a>
+      </p>
+      <p class="text-inverse font-serif tracking-wide italic">
+        ➝ {dict.footer.contentLegalPrefix}
+        <a href="https://doomscrll.com/legal.txt" class="not-italic underline underline-offset-4"
+          >doomscrll.com/legal.txt</a
+        >
+      </p>
+    </footer>
+  </main>
+</RootLayout>
