@@ -19,7 +19,7 @@ const dict = getDictionaryOf(locale).helpPopup
     <h1 class="font-serif text-4xl tracking-tight text-secondary italic">{dict.header}</h1>
     <SlabButton label="X" fit="min" closesModalId={dialogId} />
   </header>
-  <SlabAnchor href="/help" label={dict.labelHelp} />
-  <SlabAnchor href="/legal.txt" label={dict.labelLegal} />
+  <SlabAnchor href=`${locale}/help` label={dict.labelHelp} />
+  <SlabAnchor href="https://doomscrll.com/legal.txt" label={dict.labelLegal} />
   <SlabAnchor href="mailto:hello@doomscrll.com" label={dict.labelSupport} />
 </Popup>
