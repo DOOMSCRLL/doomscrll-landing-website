@@ -39,7 +39,8 @@ export const PROJECTS_FALLBACK = [
   {
     name: "Meccha Chameleon",
     author: "Lemorion_1124",
-    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2993070/library_600x900.jpg",
+    imageUrl:
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4704690/18d14b8bd834e30a6a25df5ccd7f0a6e644f1577/capsule_184x69.jpg",
   },
   {
     name: "Valheim",
@@ -72,9 +73,10 @@ export const PROJECTS_FALLBACK = [
     imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/387290/hero_capsule.jpg",
   },
   {
-    name: "Peak",
+    name: "PEAK",
     author: "Aggro Crab",
-    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3153500/hero_capsule.jpg",
+    imageUrl:
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3527290/1844964d7a353e50eb3cc979ea922729d8c1b0ad/capsule_184x69.jpg",
   },
   {
     name: "Deep Rock Galactic",
@@ -234,7 +236,7 @@ export const PROJECTS_FALLBACK = [
   {
     name: "Loop Hero",
     author: "Four Quarters",
-    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1292950/library_600x900.jpg",
+    imageUrl: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1282730/library_600x900.jpg",
   },
   {
     name: "Spelunky",
