@@ -41,7 +41,7 @@ const dict = getDictionaryOf(currentLocale)
   </nav>
   <FunnelingText text={dict.copy} />
   <ProjectGalleryWrapper server:defer />
-  <section class="flex flex-col gap-8 px-4 md:flex-row md:gap-6">
+  <section class="flex flex-col gap-8 px-4 md:flex-row md:items-center md:gap-6">
     <section class="flex flex-col items-center justify-center gap-4 md:flex-row">
       <p class="font-serif text-xl font-medium tracking-tight">{dict.appFunnel.copy}</p>
       <SlabButton label={dict.appFunnel.cta} opensModalId="app-download-popup" />
