@@ -15,9 +15,8 @@ DOOMSCRLL is provided globally and operates across multiple distinct environment
 - The DOOMSCRLL Audience Applications: The primary daily feed available via a public web application and native mobile applications. These audience-facing clients do not require user accounts, logins, or data storage.
 - The DOOMSCRLL API: The backend infrastructure facilitating data transfer between the DOOMLIT portal and the public audience clients.
 
-3. LEGAL PREAMBLE & MERCHANT OF RECORD
+3. LEGAL PREAMBLE
 These Terms of Service ("Terms") govern your access to the Platform, operated by Yakup Murat Çaylak ("Operator", "we", "us"). By accessing the Platform or reserving a DOOMLIT, you agree to be bound by these Terms.
-Our order process is conducted by our online reseller, Lemon Squeezy. Lemon Squeezy acts as the Merchant of Record for all orders, handling all customer service inquiries, taxes, and returns regarding payments and billing globally.
 
 4. DOOMLIT RESERVATION RULES (THE LEDGER)
 To maintain an egalitarian and curated feed, The Ledger enforces strict mechanical constraints on all reservations. By using the DOOMLIT web application, you agree to the following limits:
@@ -45,7 +44,7 @@ The DOOMSCRLL ecosystem frequently references operating systems, storefronts, an
 
 10. INFRASTRUCTURE & TECHNOLOGY ATTRIBUTION
 DOOMSCRLL is built utilizing a robust technology stack. We respectfully attribute the following open-source and proprietary technologies, frameworks, and libraries utilized in this project: 
-TypeScript, Nodejs, Vite, Astro, Svelte, SvelteKit, TailwindCSS, Storybook, ESLint, Prettier, jSquash, Wrangler, Docker, Fastify, PostgreSQL, Drizzle ORM, Zod, Plunk, toad-scheduler, AWS S3 SDK, zrok, Vitest, Flutter, and Lemon Squeezy (lemon.js, Webhooks). 
+TypeScript, Nodejs, Vite, Astro, Svelte, SvelteKit, TailwindCSS, Storybook, ESLint, Prettier, jSquash, Wrangler, Docker, Fastify, PostgreSQL, Drizzle ORM, Zod, Plunk, toad-scheduler, AWS S3 SDK, zrok, Vitest, and Flutter. 
 These technologies are the property of their respective maintainers and are utilized under their specific licenses. DOOMSCRLL claims no ownership over these underlying third-party technologies. For legal and licensing details regarding these tools, please refer to their official documentation.
 
 11. DATA PRIVACY & INFRASTRUCTURE LOCATION
