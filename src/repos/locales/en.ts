@@ -31,6 +31,10 @@ export default {
     altTextPlayStore: "Get it on Google Play Store",
     labelClose: "Return",
   },
+  promoPopup: {
+    body: "To celebrate the launch of DOOMSCRLL, all project reservations are free for the next 2 weeks! Go on, showcase your project!",
+    labelClose: "Understood!",
+  },
   helpPopup: {
     header: "Support Menu",
     labelHelp: "Help & FAQ",

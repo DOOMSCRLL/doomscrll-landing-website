@@ -32,6 +32,10 @@ export default {
     altTextPlayStore: "Google Play Store'dan indirin.",
     labelClose: "Geri dön",
   },
+  promoPopup: {
+    body: "DOOMSCRLL'un çıkışını kutlamak için, önümüzdeki 2 hafta boyunca proje ayırtmak ücretsiz! Hadi, projeni göster!",
+    labelClose: "Harika!",
+  },
   helpPopup: {
     header: "Yardım Menüsü:",
     labelHelp: "Yardım ve SSS",

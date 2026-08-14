@@ -1,0 +1,32 @@
+---
+import { getDictionaryOf, type Locale } from "repos/locales"
+import Popup from "comps/popup.astro"
+import SlabButton from "./slab-button.astro"
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const dict = getDictionaryOf(locale).promoPopup
+
+const dialogId = "modal-promo-launch"
+---
+
+<Popup {dialogId}>
+  <p class="font-serif text-2xl text-secondary">{dict.body}</p>
+  <SlabButton label={dict.labelClose} fit="max" closesModalId={dialogId} />
+</Popup>
+
+<script>
+  function openModal() {
+    const modal = document.getElementById("modal-promo-launch") as HTMLDialogElement
+    if (modal && !modal.open) modal.showModal()
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", openModal)
+  } else {
+    openModal()
+  }
+</script>
